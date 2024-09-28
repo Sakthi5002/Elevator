@@ -38,8 +38,8 @@ maroon : #6e2a0b */
 }
 
 .lift-box {
-    width: 610;
-    height: 600px;
+    width: 90%;
+    height: 90%;
     background: white;
     display: flex;
     flex-direction: column;
@@ -49,8 +49,8 @@ maroon : #6e2a0b */
 
 .floor {
     display: flex;
-    height: 100px;
-    width: 580px;
+    height: 5rem;
+    width: 90%;
     flex-direction: column;
     background: grey;
     padding: 10px;
@@ -58,11 +58,11 @@ maroon : #6e2a0b */
 }
 
 .floor button {
-    width: 100px;
+    width: 20%;
 }
 
 .lift {
-    height: 100px;
-    width: 580px;
+    height: 5rem;
+    width: 90%;
     background: #9a916b;
 }
