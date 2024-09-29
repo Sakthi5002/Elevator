@@ -49,15 +49,15 @@ maroon : #6e2a0b */
 
 .floor {
     display: flex;
+    flex-direction: column;
     height: 5rem;
     width: 90%;
-    flex-direction: column;
     background: grey;
     padding: 10px;
     margin: 10px;
 }
 
-.floor button {
+.call {
     width: 20%;
 }
 
@@ -65,4 +65,13 @@ maroon : #6e2a0b */
     height: 5rem;
     width: 90%;
     background: #9a916b;
+}
+
+.floor-num{
+    display: none;
+    flex-grow: 1;
+}
+
+.lift .floor-num{
+    display: block;
 }
