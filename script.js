@@ -37,6 +37,8 @@ function startLift(id){
             moveLiftIntervalId = setInterval(() => moveLift(lift+1, id), 1000);
         } else if (lift > id) {
             moveLiftIntervalId = setInterval(() => moveLift(lift-1, id), 1000);
+        } else {
+            calledQueue.splice(0,1);
         }
 }
 
