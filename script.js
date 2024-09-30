@@ -56,3 +56,6 @@ function moveLift(id, stop) {
         }
     }
 }
+
+
+// setInterval(()=>{console.log("Calling");}, 1000);
