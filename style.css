@@ -60,7 +60,7 @@ maroon : #6e2a0b */
     border: 1px solid #202020;
     padding: 10px;
     margin: 10px;
-    transition: background 1s;
+    transition: background 0.5s;
 }
 
 .floor p{
@@ -99,7 +99,7 @@ maroon : #6e2a0b */
 .lift {
     height: 5rem;
     width: 90%;
-    background: #373333;
+    background: #211f1f;
 }
 
 .floor-num{

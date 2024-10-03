@@ -109,7 +109,7 @@ function startLift(end){
             }
             console.log("Stops: " +stops);
             
-            moveLiftIntervalId = setInterval(() => moveLift(lift+1, end), 2000);
+            moveLiftIntervalId = setInterval(() => moveLift(lift+1, end), 1000);
         } else if (lift > end) {
             moveDirection = 0;
             max = Math.min(calledQueue);
@@ -122,7 +122,7 @@ function startLift(end){
             }
             console.log("Stops: " + stops);
             
-            moveLiftIntervalId = setInterval(() => moveLift(lift-1, end), 2000);
+            moveLiftIntervalId = setInterval(() => moveLift(lift-1, end), 1000);
         }
         //  else {
         //     calledQueue.splice(0,1);
@@ -147,7 +147,7 @@ function moveLift(id, stop) {
 
         console.log("after dele " + calledQueue);
         
-        setTimeout(()=>moveLiftIntervalId = setInterval(() => moveLift(moveDirection?lift+1:lift-1, stop), 2000), 2000);
+        setTimeout(()=>moveLiftIntervalId = setInterval(() => moveLift(moveDirection?lift+1:lift-1, stop), 1000), 2000);
     //     moveLiftIntervalId = setInterval(() => moveLift(lift+1, max), 1000);
     }
     // console.log(stop, lift);
@@ -190,7 +190,7 @@ function moveLift(id, stop) {
         }
 
             if (!isMoving) {
-                moveLiftIntervalId = setTimeout(()=>startLift(calledQueue[0]), 2000);
+                moveLiftIntervalId = setTimeout(()=>startLift(calledQueue[0]), 1000);
                 
             }
         }
