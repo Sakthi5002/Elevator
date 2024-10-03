@@ -1,9 +1,11 @@
 const revFloors = document.querySelectorAll(".floor");
-const revButtons = document.querySelectorAll(".call");
+const revUpButtons = document.querySelectorAll(".up");
+const revDownButtons = document.querySelectorAll(".down");
 const liftNum = document.getElementById("lift-num");
 const floorNumButtons = document.querySelectorAll(".floor-num");
 let floors = [];
-let buttons = [];
+let UpButtons = [];
+let DownButtons = [];
 let lift = 0;
 let moveLiftIntervalId;
 let calledQueue = [];
@@ -15,7 +17,8 @@ let edges = [0,revFloors.length-1];
 
 for (let i = revFloors.length-1; i >= 0; i--) {
     floors.push(revFloors[i]);
-    buttons.push(revButtons[i]);
+    UpButtons.push(revUpButtons[i]);
+    DownButtons.push(revDownButtons[i]);
     if(document.getElementsByClassName("lift")[0].isSameNode(revFloors[i]))
     {
         lift = revFloors.length - i -1;
@@ -23,8 +26,15 @@ for (let i = revFloors.length-1; i >= 0; i--) {
 }
 
 // buttons.forEach((btn, id) => btn.addEventListener('click', () => startLift(id)));
-buttons.forEach((btn, id) => btn.addEventListener('click', () => pushCall(id)));
+UpButtons.forEach((btn, id) => btn.addEventListener('click', () => pushCall(id)));
+DownButtons.forEach((btn, id) => btn.addEventListener('click', () => pushCall(id)));
 floorNumButtons.forEach((btn) => btn.addEventListener('click', () => pushCall(parseInt(btn.innerHTML))));
+// for (var i = 0; i <= 11; i++) {
+//     for (var j = 0; j <=1 ; j++) {
+//         buttons[i+j].addEventListener('click', () => pushCall(i));        
+//     }
+// }
+
 
 function pushCall(id){
     console.log("Push" + id);
@@ -99,7 +109,7 @@ function startLift(end){
             }
             console.log("Stops: " +stops);
             
-            moveLiftIntervalId = setInterval(() => moveLift(lift+1, end), 1000);
+            moveLiftIntervalId = setInterval(() => moveLift(lift+1, end), 2000);
         } else if (lift > end) {
             moveDirection = 0;
             max = Math.min(calledQueue);
@@ -112,7 +122,7 @@ function startLift(end){
             }
             console.log("Stops: " + stops);
             
-            moveLiftIntervalId = setInterval(() => moveLift(lift-1, end), 1000);
+            moveLiftIntervalId = setInterval(() => moveLift(lift-1, end), 2000);
         }
         //  else {
         //     calledQueue.splice(0,1);
@@ -137,7 +147,7 @@ function moveLift(id, stop) {
 
         console.log("after dele " + calledQueue);
         
-        setTimeout(()=>moveLiftIntervalId = setInterval(() => moveLift(moveDirection?lift+1:lift-1, stop), 1000), 1500);
+        setTimeout(()=>moveLiftIntervalId = setInterval(() => moveLift(moveDirection?lift+1:lift-1, stop), 2000), 2000);
     //     moveLiftIntervalId = setInterval(() => moveLift(lift+1, max), 1000);
     }
     // console.log(stop, lift);
@@ -180,7 +190,7 @@ function moveLift(id, stop) {
         }
 
             if (!isMoving) {
-                moveLiftIntervalId = setTimeout(()=>startLift(calledQueue[0]), 1500);
+                moveLiftIntervalId = setTimeout(()=>startLift(calledQueue[0]), 2000);
                 
             }
         }

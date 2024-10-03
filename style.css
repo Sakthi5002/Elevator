@@ -4,7 +4,8 @@
 }
 
 html {
-    background: #d2d2d2;
+    background: #363636;
+    color: white;
 }
 
 /* colors
@@ -23,10 +24,11 @@ maroon : #6e2a0b */
 }
 
 .head {
-    background-color: #c0c0c0;
+    background-color: #202020;
     text-align: center;
     padding: 2%;
-    color: #6e2a0b;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .content {
@@ -39,9 +41,10 @@ maroon : #6e2a0b */
 }
 
 .lift-box {
+    margin-top: 10px;
     width: 90%;
     height: 90%;
-    background: white;
+    background: #a4a4a4;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -53,17 +56,32 @@ maroon : #6e2a0b */
     flex-direction: column;
     height: 5rem;
     width: 90%;
-    background: grey;
+    background: rgb(102, 102, 102);
+    border: 1px solid #202020;
     padding: 10px;
     margin: 10px;
+    transition: background 1s;
 }
 
 .floor p{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.floor-btn-container{
+    display: flex;
+    /* flex-direction: column; */
+    background-color: #1c1c1c;
+    width: 20%;
+    max-width: 20%;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }
 
 .call {
-    width: 10%;
+    width: max-content;
     background-color: #6e2a0b;
     color: white;
     border: 1px solid #6e2a0b;
@@ -81,12 +99,12 @@ maroon : #6e2a0b */
 .lift {
     height: 5rem;
     width: 90%;
-    background: #9a916b;
+    background: #373333;
 }
 
 .floor-num{
-    display: none;
-    margin: 0.2rem;
+    width: 33.3%;
+    margin: 0.3rem;
     flex-grow: 1;
     background-color: #6e2a0b;
     color: white;
@@ -102,6 +120,6 @@ maroon : #6e2a0b */
     color: #6e2a0b;
 }
 
-.lift .floor-num{
+/* .lift .floor-num{
     display: block;
-}
+} */
